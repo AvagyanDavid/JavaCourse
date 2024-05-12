@@ -27,4 +27,5 @@
     <string name="PersonalInfo">Personal info</string>
     <string name="SignIn">Sign in</string>
     <string name="Registered">You are registered?</string>
+    <string name="Logout">Logout</string>
 </resources>

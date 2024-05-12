@@ -32,7 +32,7 @@ public class SignInActivity extends AppCompatActivity {
 
     ImageButton signUp, signIn;
     EditText email, password;
-
+    Long sessionId, id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,11 +78,15 @@ public class SignInActivity extends AppCompatActivity {
                                             Toast.makeText(SignInActivity.this, "Неверный пароль", Toast.LENGTH_SHORT).show();
                                         }
                                     } else {
+                                        Long sessionLong = (data.get("session_id") instanceof Number ? ((Number) data.get("session_id")).longValue() : -1);
+                                        Long idLong = (data.get("id") instanceof Number ? ((Number) data.get("id")).longValue() : -1);
+
                                         String nickname_txt = data.get("nickname").toString();
                                         String fullName_txt = data.get("fullName").toString();
-                                        String session_txt = data.get("session_id").toString();
-                                        String id_txt = data.get("id").toString();
+                                        String session_txt = sessionLong.toString();
+                                        String id_txt = idLong.toString();
                                         String email_txt = data.get("email").toString();
+
 
                                         try {
                                             FileOutputStream fileOutputStream = openFileOutput("db.txt", MODE_PRIVATE);

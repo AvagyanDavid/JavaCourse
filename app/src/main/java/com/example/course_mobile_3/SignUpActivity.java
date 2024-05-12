@@ -26,7 +26,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     ImageButton next;
     EditText fullname, nickname;
-    String login, password;
+    String email, password;
 
 
     @Override
@@ -34,7 +34,7 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        login = getIntent().getStringExtra("email");
+        email = getIntent().getStringExtra("email");
         password = getIntent().getStringExtra("password");
 
         registered();
@@ -54,7 +54,7 @@ public class SignUpActivity extends AppCompatActivity {
                         if((!nickname.getText().toString().equals(""))) {
 
                             Map<String, String> data = new HashMap<>();
-                            data.put("email",login);
+                            data.put("email",email);
                             data.put("password", password);
                             data.put("fullName", fullname.getText().toString());
                             data.put("nickname", nickname.getText().toString());

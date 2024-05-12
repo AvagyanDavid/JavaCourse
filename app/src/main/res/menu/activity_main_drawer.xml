@@ -17,6 +17,10 @@
             android:id="@+id/nav_friends"
             android:icon="@drawable/portrain_ic_friends"
             android:title="@string/menu_friends" />
+        <item
+            android:id="@+id/nav_sign_out"
+            android:icon="@drawable/logout"
+            android:title="@string/Logout"/>
 
     </group>
 </menu>
